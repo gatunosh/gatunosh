@@ -15,6 +15,10 @@ class MultiWeb(http.Controller):
         })
         
     @http.route('/ecuador',auth='public',website=True)
+    def website_ecua_awa_redirect(self):
+        return request.redirect('/')
+        
+    @http.route('/',auth='public',website=True)
     def website_ecua_awa(self):
         return request.render('website.homepage',{
             'city': 'Quito', 
